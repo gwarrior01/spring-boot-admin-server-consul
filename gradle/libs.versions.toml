@@ -1,0 +1,15 @@
+[versions]
+springBoot = "3.4.5"
+dependencyManagement = "1.1.7"
+adminServer = "3.4.5"
+
+[libraries]
+spring-boot-starter = { module = "org.springframework.boot:spring-boot-starter" }
+spring-cloud-consul-discovery = { module = "org.springframework.cloud:spring-cloud-starter-consul-discovery" }
+spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web" }
+spring-boot-starter-actuator = { module = "org.springframework.boot:spring-boot-starter-actuator" }
+spring-boot-starter-admin-server = { module = "de.codecentric:spring-boot-admin-starter-server", version.ref = "adminServer" }
+
+[plugins]
+spring-boot = {id = "org.springframework.boot", version.ref = "springBoot"}
+dependency-management = {id = "io.spring.dependency-management", version.ref = "dependencyManagement"}

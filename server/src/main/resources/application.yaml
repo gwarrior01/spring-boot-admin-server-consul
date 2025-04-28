@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: admin-server
+  cloud:
+    discovery:
+      client:
+        simple:
+          instances:
+            client:
+              - uri: http://client
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        register: false
+  boot:
+    admin:
+      discovery:
+        ignored-services: admin-server, consul
+
+server:
+  port: 8080
+
+logging:
+  level:
+    de.codecentric.boot.admin.server.services.StatusUpdater: WARN

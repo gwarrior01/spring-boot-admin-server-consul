@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  consul:
+    image: consul:1.5.3
+    container_name: consul-server
+    ports:
+      - "8500:8500"    # Consul UI и HTTP API
+      - "8600:8600/udp" # DNS (опционально)
+    command: agent -server -bootstrap -ui -client=0.0.0.0
+    networks:
+      - consul-net
+
+networks:
+  consul-net:
+    driver: bridge
