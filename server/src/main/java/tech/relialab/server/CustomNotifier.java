@@ -5,7 +5,6 @@ import de.codecentric.boot.admin.server.domain.entities.InstanceRepository;
 import de.codecentric.boot.admin.server.domain.events.InstanceEvent;
 import de.codecentric.boot.admin.server.domain.events.InstanceStatusChangedEvent;
 import de.codecentric.boot.admin.server.notify.AbstractEventNotifier;
-import jdk.jfr.Category;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -27,10 +26,10 @@ public class CustomNotifier extends AbstractEventNotifier {
                 LOGGER.info("Instance {} ({}) is {}", instance.getRegistration().getName(), event.getInstance(),
                         ((InstanceStatusChangedEvent) event).getStatusInfo().getStatus());
             }
-            else {
-                LOGGER.info("Instance {} ({}) {}", instance.getRegistration().getName(), event.getInstance(),
-                        event.getType());
-            }
+//            else {
+//                LOGGER.info("Instance {} ({}) {}", instance.getRegistration().getName(), event.getInstance(),
+//                        event.getType());
+//            }
         });
     }
 }

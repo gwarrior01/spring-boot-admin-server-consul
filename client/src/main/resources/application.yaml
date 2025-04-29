@@ -5,6 +5,9 @@ spring:
     consul:
       host: localhost
       port: 8500
+      discovery:
+        health-check-critical-timeout: 2m
+        deregister: false
 server:
   port: 8082
 

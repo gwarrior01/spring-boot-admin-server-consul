@@ -2,12 +2,12 @@ spring:
   application:
     name: admin-server
   cloud:
-    discovery:
-      client:
-        simple:
-          instances:
-            client:
-              - uri: http://client
+#    discovery:
+#      client:
+#        simple:
+#          instances:
+#            client:
+#              - uri: http://client
     consul:
       host: localhost
       port: 8500
